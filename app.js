@@ -11,26 +11,28 @@
     return firstDataSet;
   });
 
-  app.controller('NameController', ['$scope', 'RestaurantData', function($scope, RestaurantData) {
+  app.controller('NameListController', ['$scope', 'RestaurantData', function($scope, RestaurantData) {
     $scope.restaurantInfo = RestaurantData;
+    console.log($scope.restaurantInfo);
   }]); 
 
 
-  app.controller('VisitorsController', ['$scope', 'RestaurantData', function($scope, RestaurantData) {
+  app.controller('VisitorsListController', ['$scope', 'RestaurantData', function($scope, RestaurantData) {
     $scope.visitors = RestaurantData.visitors;
+    console.log($scope);
   }]); 
 
-  app.directive('NameList', function() {
+  app.directive('nameList', function() {
     return {
       restrict: 'E',
-      templateUrl: '/name-list.html'
+      templateUrl: 'name-list.html'
     };
   });
 
-  app.directive('VisitorsList', function() {
+  app.directive('visitorsList', function() {
     return {
       restrict: 'E',
-      templateUrl: '/visitors-list.html'
+      templateUrl: 'visitors-list.html'
     };
   });
 }) (); 
