@@ -11,15 +11,19 @@
     return firstDataSet;
   });
 
+  app.controller('MainController', ['$scope', 'RestaurantData', function($scope, RestaurantData) {
+    $scope.changeVisitors = function() {
+      RestaurantData.visitors = 20;
+      RestaurantData.name = "Crab House";
+    }
+  }]);
+
   app.controller('NameListController', ['$scope', 'RestaurantData', function($scope, RestaurantData) {
     $scope.restaurantInfo = RestaurantData;
-    console.log($scope.restaurantInfo);
   }]); 
-
 
   app.controller('VisitorsListController', ['$scope', 'RestaurantData', function($scope, RestaurantData) {
     $scope.visitors = RestaurantData.visitors;
-    console.log($scope);
   }]); 
 
   app.directive('nameList', function() {

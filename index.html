@@ -3,9 +3,12 @@
 </head>
 <body>
   <div ng-app="personal">
+    <div ng-controller="MainController">
     Best Restaurant Reviews
     <name-list ng-controller="NameListController"></name-list>
     <visitors-list ng-controller="VisitorsListController"></visitors-list>
+    <a href="" ng-click="changeVisitors()">Click Here</a>
+    </div>
   </div>
   <script type="text/javascript" src="angular.js"></script>
   <script type="text/javascript" src="app.js"></script>
